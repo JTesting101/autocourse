@@ -29,8 +29,8 @@ public class Fourth_web_driver {
         Select s = new Select(d);
         s.selectByVisibleText("Africa");
         // Select the gender on the page
-        WebElement sex = a.findElement(By.id("sex-1"));
-        sex.click();
+        WebElement gen = a.findElement(By.id("sex-1"));
+        gen.click();
 
         a.quit();
     }
