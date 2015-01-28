@@ -1,6 +1,7 @@
 package com.company;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,6 +32,17 @@ public class Fifth_web_driver {
 
         WebElement country = a.findElement(By.xpath("//select[@id=\"dropdown_7\"]/option[@value='Peru']"));
         country.click();
+
+        WebElement month = a.findElement(By.xpath("//div[@class='piereg_time date_format_field']/div[@class='time_fields']/select"));
+        month.sendKeys("3");
+
+        WebElement day = a.findElement(By.xpath("//div[@class='piereg_time date_format_field']/div[@class='time_fields']/following-sibling::div/select"));
+        day.sendKeys("4");
+
+        WebElement year = a.findElement(By.xpath("//div[@class='piereg_time date_format_field']/div[@class='time_fields']/following-sibling::div/following-sibling::div/select"));
+        year.sendKeys("1971");
+
+
 
     }
 }
