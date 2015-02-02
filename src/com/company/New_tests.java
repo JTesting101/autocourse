@@ -8,10 +8,10 @@ import java.util.Random;
  * Created by user on 2/2/15.
  */
 public class New_tests {
-    private static String masterXpath = "//table/tbody/tr[td=\"Your master password\"]/td/input[@type=\"password\"]";
+    private static String masterXpath = "//tr[td=\"Your master password\"]//input[@type=\"password\"]";
     private static String pushButton = "//input[@type=\"submit\"]";
-    private static String siteXpath= "//table/tbody/tr[td=\"Site name\"]/td/input";
-    private static String passwordXpath = "//table/tbody/tr[td=\"Generated password\"]/td/input";
+    private static String siteXpath= "//tr[td=\"Site name\"]//input";
+    private static String passwordXpath = "//tr[td=\"Generated password\"]//input";
 
     public static void open(WebDriver w) {
         w.get("http://oxogamestudio.com/passwd.current6.htm");
