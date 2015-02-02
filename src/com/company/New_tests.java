@@ -8,10 +8,10 @@ import java.util.Random;
  * Created by user on 2/2/15.
  */
 public class New_tests {
-    private static String masterXpath = "//table/tbody/tr[td=\"Your master password\"]/td/input[@name=\"master\"][@type=\"password\"]";
+    private static String masterXpath = "//table/tbody/tr[td=\"Your master password\"]/td/input[@type=\"password\"]";
     private static String pushButton = "//input[@type=\"submit\"]";
-    private static String passwordXpath = "//input[@name=\"password\"]";
-    private static String siteXpath = "//input[@name=\"site\"]";
+    private static String siteXpath= "//table/tbody/tr[td=\"Site name\"]/td/input";
+    private static String passwordXpath = "//table/tbody/tr[td=\"Generated password\"]/td/input";
 
     public static void open(WebDriver w) {
         w.get("http://oxogamestudio.com/passwd.current6.htm");
@@ -56,24 +56,24 @@ public class New_tests {
     }
 
     public static String myInputPass(WebDriver w, Integer i, Integer k)throws InterruptedException{
-        String mymaster = Angel_net.myRandom(i);
-        String mysite = Angel_net.myRandom(k);
-        Angel_net.setMaster(w, mymaster);
-        Angel_net.setSite(w, mysite);
-        Angel_net.pushButton(w);
+        String mymaster = New_tests.myRandom(i);
+        String mysite = New_tests.myRandom(k);
+        New_tests.setMaster(w, mymaster);
+        New_tests.setSite(w, mysite);
+        New_tests.pushButton(w);
         Thread.sleep(1000);
-        String passwd = Angel_net.getPassword(w);
+        String passwd = New_tests.getPassword(w);
 
         return passwd;
     }
     public static String myInputPassTest3(WebDriver w, Integer i) throws InterruptedException{
-        String mymaster = Angel_net.myRandom(i);
+        String mymaster = New_tests.myRandom(i);
         String mysite = "angel.net";
-        Angel_net.setMaster(w, mymaster);
-        Angel_net.setSite(w, mysite);
-        Angel_net.pushButton(w);
+        New_tests.setMaster(w, mymaster);
+        New_tests.setSite(w, mysite);
+        New_tests.pushButton(w);
         Thread.sleep(1000);
-        String passwd = Angel_net.getPassword(w);
+        String passwd = New_tests.getPassword(w);
 
         return passwd;
     }

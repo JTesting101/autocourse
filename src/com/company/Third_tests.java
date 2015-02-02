@@ -52,6 +52,7 @@ public class Third_tests {
         New_tests.setSite(a, "angel.net");
         New_tests.pushButton(a);
         Thread.sleep(1000);
+        Thread.sleep(1000);
         String passwd = New_tests.getPassword(a);
         Assert.assertEquals("B9ya7yayeK/Zn@1a", passwd);
 
@@ -62,7 +63,8 @@ public class Third_tests {
 
         String passwd1 = New_tests.myInputPassTest3(a, 10);
         String passwd2 = New_tests.myInputPassTest3(a, 10);
-
+        Thread.sleep(1000);
+        Thread.sleep(1000);
         Assert.assertNotEquals(passwd1, passwd2);
 
     }
@@ -73,7 +75,8 @@ public class Third_tests {
         String passwd = New_tests.myInputPass(a, 10, 10);
         String site = New_tests.getSite(a);
         String master = New_tests.getMaster(a);
-
+        Thread.sleep(1000);
+        Thread.sleep(1000);
         Assert.assertNotEquals("", passwd);
         Assert.assertNotEquals("", site);
         Assert.assertNotEquals("", master);
@@ -85,7 +88,8 @@ public class Third_tests {
         New_tests.myInputPass(a, 32, 128);
         String site = New_tests.getSite(a);
         String master = New_tests.getMaster(a);
-
+        Thread.sleep(1000);
+        Thread.sleep(1000);
         Assert.assertNotEquals("", site);
         Assert.assertNotEquals("", master);
     }
