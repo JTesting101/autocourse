@@ -1,24 +1,21 @@
 package com.company;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.Random;
-
 /**
- * Created by user on 1/30/15.
+ * Created by user on 2/2/15.
  */
-public class Angel_net {
+public class New_tests {
     private static String masterXpath = "//table/tbody/tr[td=\"Your master password\"]/td/input[@name=\"master\"][@type=\"password\"]";
     private static String pushButton = "//input[@type=\"submit\"]";
     private static String passwordXpath = "//input[@name=\"password\"]";
     private static String siteXpath = "//input[@name=\"site\"]";
 
-    public static void open(WebDriver w){
-        w.get("http://angel.net/~nic/passwd.current.html");
+    public static void open(WebDriver w) {
+        w.get("http://oxogamestudio.com/passwd.current6.htm");
     }
-
     public static void setMaster(WebDriver w, String i){
         WebElement f = w.findElement(By.xpath(masterXpath));
         f.sendKeys(i);
@@ -46,6 +43,7 @@ public class Angel_net {
         WebElement f = w.findElement(By.xpath(pushButton));
         f.click();
     }
+
     public static String myRandom(Integer val) {
         String forName = "qwertyuiop[]asdfghjkl;\\zxcvbnm,.";
         Random r = new Random();
@@ -79,5 +77,4 @@ public class Angel_net {
 
         return passwd;
     }
-
 }
