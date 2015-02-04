@@ -8,10 +8,10 @@ import java.util.List;
  * Created by user on 2/4/15.
  */
 public class getData {
-    public static WebElement getValueElement(WebDriver w, String xpath){
+    public static WebElement getValueElement(String xpath){
         int timeout = 10000;
         for (int timepassed =0; timepassed < timeout; timepassed=+100){
-            List<WebElement> f = w.findElements(By.xpath(xpath));
+            List<WebElement> f = TestHelper.driver.findElements(By.xpath(xpath));
             if(f.size() > 0) {
                 return f.get(0);
             }

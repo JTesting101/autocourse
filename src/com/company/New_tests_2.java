@@ -15,39 +15,39 @@ public class New_tests_2 {
     private static String siteXpath= "//tr[td=\"Site name\"]//input";
     private static String passwordXpath = "//tr[td=\"Generated password\"]//input";
 
-    public static void open(WebDriver w) {
-        w.get("http://oxogamestudio.com/passwd.current8.htm");
+    public static void open() {
+        TestHelper.driver.get("http://oxogamestudio.com/passwd.current8.htm");
     }
 
-    public static void setMaster(WebDriver w, String i){
-        WebElement n = getData.getValueElement(w,masterXpath);
+    public static void setMaster(String i){
+        WebElement n = getData.getValueElement(masterXpath);
         n.clear();
         n.sendKeys(i);
     }
 
-    public static String getMaster(WebDriver w){
-        WebElement name = getData.getValueElement(w,masterXpath);
+    public static String getMaster(){
+        WebElement name = getData.getValueElement(masterXpath);
 
         return name.getAttribute("value");
     }
 
-    public static void setSite(WebDriver w, String i){
-        WebElement f = getData.getValueElement(w,siteXpath);
+    public static void setSite(String i){
+        WebElement f = getData.getValueElement(siteXpath);
         f.clear();
         f.sendKeys(i);
     }
-    public static String getSite(WebDriver w){
-        WebElement name = getData.getValueElement(w,siteXpath);
+    public static String getSite(){
+        WebElement name = getData.getValueElement(siteXpath);
         return name.getAttribute("value");
     }
 
-    public static String getPassword(WebDriver w){
-        WebElement passwd = getData.getValueElement(w,passwordXpath);
+    public static String getPassword(){
+        WebElement passwd = getData.getValueElement(passwordXpath);
         return passwd.getAttribute("value");
     }
 
-    public static void pushButton(WebDriver w){
-        WebElement f = getData.getValueElement(w,pushButton);
+    public static void pushButton(){
+        WebElement f = getData.getValueElement(pushButton);
         f.click();
     }
 
@@ -62,25 +62,25 @@ public class New_tests_2 {
         return myrandom;
     }
 
-    public static String myInputPass(WebDriver w, Integer i, Integer k)throws InterruptedException{
+    public static String myInputPass(Integer i, Integer k)throws InterruptedException{
         String mymaster = New_tests_2.myRandom(i);
         String mysite = New_tests_2.myRandom(k);
-        New_tests_2.setMaster(w, mymaster);
-        New_tests_2.setSite(w, mysite);
-        New_tests_2.pushButton(w);
+        New_tests_2.setMaster( mymaster);
+        New_tests_2.setSite(mysite);
+        New_tests_2.pushButton();
         Thread.sleep(1000);
-        String passwd = New_tests_2.getPassword(w);
+        String passwd = New_tests_2.getPassword();
 
         return passwd;
     }
-    public static String myInputPassTest3(WebDriver w, Integer i) throws InterruptedException{
+    public static String myInputPassTest3(Integer i) throws InterruptedException{
         String mymaster = New_tests_2.myRandom(i);
         String mysite = "angel.net";
-        New_tests_2.setMaster(w, mymaster);
-        New_tests_2.setSite(w, mysite);
-        New_tests_2.pushButton(w);
+        New_tests_2.setMaster( mymaster);
+        New_tests_2.setSite( mysite);
+        New_tests_2.pushButton();
         Thread.sleep(1000);
-        String passwd = New_tests_2.getPassword(w);
+        String passwd = New_tests_2.getPassword();
 
         return passwd;
     }

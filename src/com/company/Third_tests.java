@@ -14,13 +14,13 @@ import java.io.File;
  */
 @RunWith(JUnit4.class)
 public class Third_tests {
-    WebDriver a;
+
     boolean testPassed;
     @Before
     public void Init() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
-        a = new ChromeDriver();
-        New_tests_2.open(a);
+        TestHelper.driver = new ChromeDriver();
+        New_tests_2.open();
         Thread.sleep(1000);
 
     }
@@ -31,16 +31,16 @@ public class Third_tests {
         //      File scrFile = ((TakesScreenshot) a).getScreenshotAs(OutputType.FILE);
         //      FileUtils
         //     }
-        a.close();
+        TestHelper.driver.close();
     }
     // Test 1
     @Test
     public void MyTest()throws InterruptedException {
 
-        New_tests_2.setSite(a, "angel.net");
-        New_tests_2.pushButton(a);
+        New_tests_2.setSite("angel.net");
+        New_tests_2.pushButton();
         Thread.sleep(1000);
-        String passwd = New_tests_2.getPassword(a);
+        String passwd = New_tests_2.getPassword();
         Assert.assertEquals("Is2nfhWTJLvq0@1a", passwd);
 
     }
@@ -48,12 +48,12 @@ public class Third_tests {
     @Test
     public void MyTest1()throws InterruptedException {
 
-        New_tests_2.setMaster(a, "asdasd");
-        New_tests_2.setSite(a, "angel.net");
-        New_tests_2.pushButton(a);
+        New_tests_2.setMaster("asdasd");
+        New_tests_2.setSite("angel.net");
+        New_tests_2.pushButton();
         Thread.sleep(1000);
         Thread.sleep(1000);
-        String passwd = New_tests_2.getPassword(a);
+        String passwd = New_tests_2.getPassword();
         Assert.assertEquals("B9ya7yayeK/Zn@1a", passwd);
 
     }
@@ -61,8 +61,8 @@ public class Third_tests {
     @Test
     public void MyTest2()throws InterruptedException {
 
-        String passwd1 = New_tests_2.myInputPassTest3(a, 10);
-        String passwd2 = New_tests_2.myInputPassTest3(a, 10);
+        String passwd1 = New_tests_2.myInputPassTest3(10);
+        String passwd2 = New_tests_2.myInputPassTest3(10);
         Thread.sleep(1000);
         Thread.sleep(1000);
         Assert.assertNotEquals(passwd1, passwd2);
@@ -72,9 +72,9 @@ public class Third_tests {
     @Test
     public void MyTest3()throws InterruptedException {
 
-        String passwd = New_tests_2.myInputPass(a, 10, 10);
-        String site = New_tests_2.getSite(a);
-        String master = New_tests_2.getMaster(a);
+        String passwd = New_tests_2.myInputPass(10, 10);
+        String site = New_tests_2.getSite();
+        String master = New_tests_2.getMaster();
         Thread.sleep(1000);
         Thread.sleep(1000);
         Assert.assertNotEquals("", passwd);
@@ -85,9 +85,9 @@ public class Third_tests {
     // Test 5
     @Test
     public void MyTest4()throws InterruptedException {
-        New_tests_2.myInputPass(a, 32, 128);
-        String site = New_tests_2.getSite(a);
-        String master = New_tests_2.getMaster(a);
+        New_tests_2.myInputPass(32, 128);
+        String site = New_tests_2.getSite();
+        String master = New_tests_2.getMaster();
         Thread.sleep(1000);
         Thread.sleep(1000);
         Assert.assertNotEquals("", site);
