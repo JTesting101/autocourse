@@ -76,8 +76,8 @@ public class New_tests_2 {
     public static String myInputPassTest3(Integer i) throws InterruptedException{
         String mymaster = New_tests_2.myRandom(i);
         String mysite = "angel.net";
-        New_tests_2.setMaster( mymaster);
-        New_tests_2.setSite( mysite);
+        New_tests_2.setMaster(mymaster);
+        New_tests_2.setSite(mysite);
         New_tests_2.pushButton();
         Thread.sleep(1000);
         String passwd = New_tests_2.getPassword();
