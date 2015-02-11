@@ -64,5 +64,10 @@ public class Strahovator_tests extends TestHelper{
 
         Strahovator_classes.pushBuy1();
         Strahovator_classes.noReg();
+        Strahovator_classes.pushPolicy();
+        Strahovator_classes.myInputPolicy();
+
+
+
     }
 }
