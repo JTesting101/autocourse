@@ -27,7 +27,7 @@ public class TestHelper {
     public void Init() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "D:\\My_projects\\aut\\chromedriver_win32\\chromedriver.exe");
         TestHelper.driver = new ChromeDriver();
-        Strahovator_classes.open();
+        Ukrzal_classes.open();
 
 
     }
@@ -47,6 +47,10 @@ public class TestHelper {
     public static void pushButton(String button){
         WebElement f = getData.getValueElement(button);
         f.click();
+    }
+
+    public static void clearFields(String str){
+        TestHelper.getData.getValueElement(str).clear();
     }
 
     public static class getData {
